@@ -1,5 +1,4 @@
 import React from 'react'
-import { CiSearch } from "react-icons/ci";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { Link } from 'react-router-dom';
 
@@ -9,7 +8,6 @@ const Header1 = () => {
     <div className='flex justify-between h-14 items-center pt-4 pb-4 border-b border-gray-400  sm:gap-20 gap-20' >
     <div className='flex justify-between w-1/3 items-center  sm:w-1/4' >
     <Link to='/'><h1 className='sm:text-2xl text-xl ml-4 sm:ml-16 font-bold'>Euphoria</h1></Link>  
-
     </div>
 
     <div className='flex  md:justify-center lg:gap-10 md:w-2/4  sm:w-2/5  md:gap-2  sm:gap-2 text-md xl:gap-5  sm:justify-end  gap-2 w-36' >

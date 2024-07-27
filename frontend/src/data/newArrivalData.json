@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "alt": "Image 1",
+    "src": "images/image2.jpg",
+    "text": "Knitted Joggers"
+  },
+  {
+    "id": 2,
+    "alt": "Image 1",
+    "src": "images/image3.jpg",
+    "text": "Full Sleeve"
+  },
+  {
+    "id": 2,
+    "alt": "Image 1",
+    "src": "images/image4.jpg",
+    "text": "Active T-shirts"
+  },
+  {
+    "id": 2,
+    "alt": "Image 1",
+    "src": "images/image5.jpg",
+    "text": "Urban Shirts"
+  },
+  {
+    "id": 5,
+    "alt": "Image 1",
+    "src": "images/image5.jpg",
+    "text": "Full Sleeve"
+  }
+]

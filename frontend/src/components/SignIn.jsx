@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import SigninImage from "../images/SignIn Image.png";
 import { FaGoogle } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FiMinus } from "react-icons/fi";
