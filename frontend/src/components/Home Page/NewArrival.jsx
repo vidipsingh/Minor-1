@@ -25,7 +25,32 @@ const NewArrival1 = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   return (
@@ -46,8 +71,8 @@ const NewArrival1 = () => {
         </div>
       </div>
 
-      <div className='mt-11 mb-36 ml-24 pl-4'>
-          <h1 className='text-2xl font-bold border-l-4 border-purple-500 pl-1 '>New Arrival</h1>
+      <div className='mt-11 mb-10 sm:ml-24 ml-16 pl-4'>
+          <h1 className='text-2xl font-bold border-l-4 border-purple-500 sm:pl-2 sm:-ml-0 -ml-12 '>New Arrival</h1>
           <div className='mt-8 flex flex-col gap-8'>
           <Slider {...settings}>
             { newArrivalData && newArrivalData.map( data => { 
