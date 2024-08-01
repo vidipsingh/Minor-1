@@ -1,0 +1,35 @@
+[
+    {
+      "id": 1,
+      "alt": "Image 1",
+      "src": "images/image2.jpg",
+      "text": "Shirts",
+      "desc": "AS's Brand",
+      "price": 123.00
+    },
+    {
+      "id": 2,
+      "alt": "Image 1",
+      "src": "images/image3.jpg",
+      "text": "Printed T-Shirts",
+      "desc": "MM's Brand",
+      "price": 37.00
+    },
+    {
+      "id": 3,
+      "alt": "Image 1",
+      "src": "images/image4.jpg",
+      "text": "Plain T-shirts",
+      "desc": "Nike's Brand",
+      "price": 37.00
+    },
+    {
+      "id": 4,
+      "alt": "Image 1",
+      "src": "images/image5.jpg",
+      "text": "Polo Shirts",
+      "desc": "Sara's Brand",
+      "price": 119.00
+    }
+  ]
+  

@@ -78,7 +78,7 @@ const NewArrival1 = () => {
             { newArrivalData && newArrivalData.map( data => { 
               return(
                 <div className='w-20' key={ data.id }>
-                  <img src={data.src} alt='' className='h-44 w-44 bg-gray-500 rounded-md shadow-md hover:shadow-lg object-cover' />
+                  <img src={data.src} alt='' className='h-44 w-44 bg-gray-500 rounded-md shadow-md hover:shadow-lg object-cover hover:cursor-pointer' />
                   <h1 className='mt-3 font-semibold'>{data.text}</h1>
                 </div>
               )

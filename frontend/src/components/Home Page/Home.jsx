@@ -5,6 +5,7 @@ import slides from '../../data/carouselData.json'
 import NewArrival from './NewArrival';
 import SavingSection from './SavingSection';
 import CategorySection from './CategorySection';
+import FeedbackSection from './FeedbackSection';
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
         <NewArrival/>
         <SavingSection/>
         <CategorySection/>
+        <FeedbackSection/>
     </div>
   )
 }

@@ -59,7 +59,7 @@ const CategorySection = () => {
         {
           logos && logos.map( data => {
             return(
-              <div className="w-36 h-14 bg-white rounded-md overflow-hidden shadow-white shadow-sm cursor-pointer hover:shadow-md hover:shadow-white " key={data.id} >
+              <div className="w-36 h-14 bg-white rounded-md overflow-hidden shadow-white shadow-sm cursor-pointer" key={data.id} >
                 <img src={data.src} alt=""  className="h-full w-full object-cover object-center"/>
               </div>
             )
