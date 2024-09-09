@@ -6,6 +6,7 @@ import NewArrival from './NewArrival';
 import SavingSection from './SavingSection';
 import CategorySection from './CategorySection';
 import FeedbackSection from './FeedbackSection';
+import Footer from '../Footer';
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
         <SavingSection/>
         <CategorySection/>
         <FeedbackSection/>
+        <Footer />
     </div>
   )
 }
