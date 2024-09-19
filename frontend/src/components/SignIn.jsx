@@ -7,6 +7,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Header2 from "./Header2";
 import { useAuth0 } from "@auth0/auth0-react";
+import SignUpImage from '../data/images/sign-up-image.jpg';
 
 
 const SignIn = () => {
@@ -36,7 +37,7 @@ const SignIn = () => {
       <Header2 />
       <div className="flex justify-center h-full">
         <div className="lg:w-1/2 bg-gray-500">
-          {/* <img src={SigninImage} alt="Sign In Image" className='w-full object-cover h-full'/> */}
+        <img src={SignUpImage} alt="Sign In Image" className='w-full object-cover h-full '/>
         </div>
         <div className="w-3/4 pl-10 sm:pl-0 sm:w-3/4 lg:w-1/2 mt-2 h-5/6 border lg:border-none border-black">
           <h1 className="w-40 lg:ml-28 md:ml-14 font-semibold text-2xl mt-8">
