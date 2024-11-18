@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+
+.app.normal {
+  filter: none; /* Normal vision */
+}
+
+.app.tritanopia {
+  filter: hue-rotate(180deg); /* Example adjustment for Tritanopia */
+}
+
+.app.protanopia {
+  filter: hue-rotate(90deg); /* Example adjustment for Protanopia */
+}
+
+.app.deuteranopia {
+  filter: hue-rotate(45deg); /* Example adjustment for Deuteranopia */
+}
+
+.app.achromatopsia {
+  filter: grayscale(100%); /* Complete color blindness */
+}
+
+.app.monochromacy {
+  filter: grayscale(100%); /* Similar to achromatopsia but may vary */
+}

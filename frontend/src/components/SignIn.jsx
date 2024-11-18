@@ -1,6 +1,6 @@
-import React, {useState} from "react";
+// SignIn.jsx
+import React, { useState } from "react";
 import { FaGoogle } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
 import { FiMinus } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -9,24 +9,20 @@ import Header2 from "./Header2";
 import { useAuth0 } from "@auth0/auth0-react";
 import SignUpImage from '../data/images/sign-up-image.jpg';
 
-
-const SignIn = () => {
+const SignIn = ({ setColorBlindness }) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const { user, loginWithRedirect, isAuthenticated, logout } = useAuth0();
-  console.log("Current User", user);
   
-
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
       .post('http://localhost:3001/login', { email, password })
       .then((result) => {
-        console.log(result)
-        if(result.data === "Success") {
-          navigate('/')
+        if (result.data === "Success") {
+          navigate('/');
         }
       })
       .catch((err) => console.log(err));
@@ -34,56 +30,65 @@ const SignIn = () => {
 
   return (
     <div className="h-screen">
-      <Header2 />
+      <Header2 setColorBlindness={setColorBlindness} />
       <div className="flex justify-center h-full">
-        <div className="lg:w-1/2 bg-gray-500">
-        <img src={SignUpImage} alt="Sign In Image" className='w-full object-cover h-full '/>
+        <div className="lg:w-[50%] bg-gray500">
+          <img src={SignUpImage} alt="Sign In Image" className='w-full object-cover h-full '/>
         </div>
-        <div className="w-3/4 pl-10 sm:pl-0 sm:w-3/4 lg:w-1/2 mt-2 h-5/6 border lg:border-none border-black">
-          <h1 className="w-40 lg:ml-28 md:ml-14 font-semibold text-2xl mt-8">
-            Sign In Page
-          </h1>
-          <div className="flex flex-col lg:justify-center lg:items-center md:pl-12 xl:pl-1 gap-8 mt-4">
+        <div className="w-full pl-[10%] lg:w-[40%] mt-[5%] h-[80%] border lg:border-none border-black">
+          <h1 className="font-semibold text-lg mt-[5%]">Sign In Page</h1>
+          <div className="flex flex-col lg:justify-center lg:items-center gap-[5%] mt-[3%]">
             {
-              isAuthenticated ? <button onClick={(e) => logout()}>Logout</button> :
-              <button className="flex items-center gap-2 text-sm md:text-xl border border-black xl:pl-12 xl:pr-36 xl:ml-1  lg:ml-10 md:pl-2 md:pr-2 pl-2 pr-8 pt-1 pb-1 rounded-md text-purple-600" onClick={(e) => loginWithRedirect()}>
-              <FaGoogle className="text-black" /> Continue with Google
-              </button>
+              isAuthenticated ? 
+              (<button onClick={(e) => logout()}>Logout</button>) :
+              (<button 
+                className="flex items-center gap-[0.5rem] text-lg border border-black pl-[0.5rem] pr-[0.5rem] rounded-md text-purple600" 
+                onClick={(e) => loginWithRedirect()}
+              >
+                <FaGoogle /> Continue with Google
+              </button>)
             }
             
-            {/* <button className="flex items-center gap-2 text-xl border border-black pl-24 pr-24 pt-1 pb-1 rounded-md text-purple-600">
-              <FaTwitter className="text-black" /> Continue with Twitter
-            </button> */}
-          </div>
-          <div className="">
-            <h1 className="flex items-center justify-center  mt-6"><FiMinus className="text-4xl"/>OR<FiMinus className="text-4xl"/></h1>
-          </div>
+            {/* OR Separator */}
+            <h1 className="flex items-center justify-center mt-[3%]"><FiMinus /> OR <FiMinus /></h1>
 
-
-        <form onSubmit={handleSubmit} >
-        <div className="flex flex-col md:ml-14 lg:ml-28 mt-4">
-          <h1 className=" ">User name or email address</h1>
-        </div>
-        <input
+            {/* Form */}
+            <form onSubmit={handleSubmit}>
+              {/* Email Input */}
+              <label>User name or email address</label>
+              <input
                 type="email"
-                className="border border-black w-2/3 h-8 rounded-md md:ml-14 lg:ml-28 pl-2"
+                required
+                className="border border-black w-full h-[35px] rounded-md pl-[0.5rem]"
                 onChange={(e) => setEmail(e.target.value)}
               />
-        <div className="flex flex-col md:ml-14 lg:ml-28 mt-4">
-          <h1 className="">Password</h1>
-          
-        </div>
-        <input
+
+              {/* Password Input */}
+              <label>Password</label>
+              <input
                 type="password"
-                className="border border-black w-2/3 h-8 rounded-md md:ml-14 lg:ml-28 pl-2"
+                required
+                minLength={8}
+                title="Use at least 8 characters with a mix of letters, numbers & symbols."
+                className="border border-black w-full h-[35px] rounded-md pl-[0.5rem]"
                 onChange={(e) => setPassword(e.target.value)}
               />
-        <div className="md:ml-14 lg:ml-28 mt-4"> 
-        <button className='bg-purple-600 text-white pl-10 pr-10 pt-2 pb-2 rounded-md hover:bg-black'>Sign in</button>
-        <h1>Don't have an account? <Link to="/sign-up" className="underline cursor-pointer hover:text-purple-700">Sign up</Link></h1>
-        </div>
-        </form>
 
+              {/* Submit Button */}
+              <div> 
+                <button type="submit" 
+                        className='bg-purple600 bg-black my-2 hover:bg-purple-600 text-white pl-[1rem] pr-[1rem] pt-[0.5rem] pb-[0.5rem] rounded-md'>
+                        Sign in
+                </button>
+
+                {/* Link to Sign Up */}
+                <h1>Don't have an account? 
+                  <Link to="/sign-up" className="underline cursor-pointer hover:text-purple700"> Sign up</Link>
+                </h1>
+              </div>
+            </form>
+
+          </div>
         </div>
       </div>
     </div>  
