@@ -27,7 +27,7 @@ const Header3 = ({ setColorBlindness }) => {
   return (
     <>
       <div className='w-screen flex justify-center xl:gap-28 lg:gap-16 md:gap-10 sm:gap-20 gap-5 border-b-2 pt-2 pb-2'>
-        <div className='lg:text-xl md:text-lg sm:font-bold font-semibold cursor-pointer'>Euphoria</div>
+        <div className='lg:text-xl md:text-lg sm:font-bold font-semibold cursor-pointer'>ColorSight</div>
         <div className='md:pt-1 sm:hidden hidden md:flex'>
           <ul className='flex lg:gap-10 md:gap-3 text-gray-500 md:text-sm lg:text-base '>
             <li className='text-black hover:cursor-pointer font-bold'>Shop</li>

@@ -28,7 +28,7 @@ const Footer = () => {
                 </div>
             </div>
             <div>
-                <p className='text-white mt-7'>Copyright &copy; {currentYear} Euphoria Pvt Ltd. All rights reserved.</p>
+                <p className='text-white mt-7'>Copyright &copy; {currentYear} ColorSight Pvt Ltd. All rights reserved.</p>
             </div>
       </div>
     </div>
