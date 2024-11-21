@@ -59,16 +59,29 @@ const Header3 = ({ setColorBlindness }) => {
         </div>
       </div>
 
-      {/* Color Blindness Dropdown */}
+      {isDropdownOpen && (
+              <div className='absolute right-0 w-36 mr-2 bg-gray-400 shadow-md z-50'>
+                <ul className='flex flex-col'>
+                  <li className='py-2 px-4 hover:bg-gray-200 cursor-pointer'>
+                    <Link to="/sign-in">Sign In</Link>
+                  </li>
+                  <li className='py-2 px-4 hover:bg-gray-200 cursor-pointer'>
+                    <Link to="/sign-up">Sign Up</Link>
+                  </li>
+                </ul>
+              </div>
+            )}
+
+
       {isColorBlindnessDropdownOpen && (
         <div className='flex flex-col px-9 py-6 absolute w-auto gap-4 ml-[950px] h-auto bg-gray-400 shadow-2xl z-50'>
-          {/* Normal Vision Option */}
+
           <button onClick={() => handleColorBlindnessChange('normal')} className='text-xl cursor-pointer hover:text-black font-semibold'>Normal</button>
-          {/* Color Blindness Options */}
+
           <button onClick={() => handleColorBlindnessChange('tritanopia')} className='text-xl cursor-pointer hover:text-black font-semibold'>Tritanopia</button>
           <button onClick={() => handleColorBlindnessChange('protanopia')} className='text-xl cursor-pointer hover:text-black font-semibold'>Protanopia</button>
           <button onClick={() => handleColorBlindnessChange('deuteranopia')} className='text-xl cursor-pointer hover:text-black font-semibold'>Deuteranopia</button>
-          {/* Additional Color Blindness Options */}
+
           <button onClick={() => handleColorBlindnessChange('achromatopsia')} className='text-xl cursor-pointer hover:text-black font-semibold'>Achromatopsia</button>
           <button onClick={() => handleColorBlindnessChange('monochromacy')} className='text-xl cursor-pointer hover:text-black font-semibold'>Monochromacy</button>
         </div>

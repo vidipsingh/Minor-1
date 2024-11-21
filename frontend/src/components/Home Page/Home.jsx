@@ -1,4 +1,3 @@
-// Home.jsx
 import React, { useState } from 'react';
 import Header3 from './Header3';
 import Carousel from './Carousel';
@@ -14,13 +13,18 @@ const Home = () => {
 
   return (
     <div className={`app ${colorBlindness}`}>
-      <Header3 setColorBlindness={setColorBlindness} />
-      <Carousel data={slides} />
-      <NewArrival />
-      <SavingSection />
-      <CategorySection />
-      <FeedbackSection />
-      <Footer />
+      <header className="fixed bg-white top-0 left-0 right-0 z-50">
+        <Header3 setColorBlindness={setColorBlindness} />
+      </header>
+      
+      <div className="pt-12">
+        <Carousel data={slides} />
+        <NewArrival />
+        <SavingSection />
+        <CategorySection />
+        <FeedbackSection />
+        <Footer />
+      </div>
     </div>
   );
 }
